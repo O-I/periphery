@@ -24,3 +24,5 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'unicorn'
 gem 'unicorn-rails'
+
+gem 'crunchbase'
