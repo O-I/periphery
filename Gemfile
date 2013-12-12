@@ -27,6 +27,7 @@ gem 'unicorn-rails'
 
 gem 'dotenv-rails'
 gem 'crunchbase'
+gem 'angellist_api'
 
 group :development do
   gem 'pry-rails'
