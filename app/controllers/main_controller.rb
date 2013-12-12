@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  def index
+  def show
     # @companies = Company.all
     @company = Crunchbase::Company.get('Docurated')
   end

@@ -1,3 +1,3 @@
 Periphery::Application.routes.draw do
-  root 'main#index'
+  root 'main#show'
 end
