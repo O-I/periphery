@@ -27,3 +27,7 @@ gem 'unicorn-rails'
 
 gem 'dotenv-rails'
 gem 'crunchbase'
+
+group :development do
+  gem 'pry-rails'
+end 
