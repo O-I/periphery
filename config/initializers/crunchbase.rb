@@ -1,1 +1,1 @@
-Crunchbase::API.key = ''
+Crunchbase::API.key = ENV['APIKEY']
