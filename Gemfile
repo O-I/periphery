@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 gem 'unicorn-rails'
 
+gem 'foundation-rails'
+
 gem 'dotenv-rails'
 gem 'crunchbase'
 gem 'angellist_api'
