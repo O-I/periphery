@@ -30,6 +30,7 @@ GEM
       faraday_middleware (~> 0.7)
       hashie (>= 1.1.0)
       multi_json (~> 1.0)
+    angularjs-rails (1.2.3)
     arel (4.0.1)
     atomic (1.1.14)
     builder (3.1.4)
@@ -138,6 +139,7 @@ PLATFORMS
 
 DEPENDENCIES
   angellist_api
+  angularjs-rails
   coffee-rails (~> 4.0.0)
   crunchbase
   dotenv-rails
