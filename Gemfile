@@ -27,6 +27,8 @@ gem 'unicorn-rails'
 
 gem 'foundation-rails'
 
+gem 'angularjs-rails'
+
 gem 'dotenv-rails'
 gem 'crunchbase'
 gem 'angellist_api'
