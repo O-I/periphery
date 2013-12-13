@@ -1,5 +1,4 @@
 class MainController < ApplicationController
-  respond_to :json
 
   def show
     # @companies = Company.all
@@ -9,9 +8,9 @@ class MainController < ApplicationController
   end
 
   def search
-    # puts params[:search]
-    # @company = Crunchbase::Company.get()
-    # @company = Company.search(params[:search])
+    @company = Crunchbase::Company.find(params[:search])
+    binding.pry
+      # @company = Company.search(params[:search]
   end
 
 end
