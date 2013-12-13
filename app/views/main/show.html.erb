@@ -1,8 +1,12 @@
 <h1 class='text-center'>Periphery</h1>
 
-<form class='row'>
-  <input type='text' placeholder='Enter a startup' ng-model='searchCompany.name'>
-</form>
+<div ng-controller='RelationsCtrl'>
+  <form class='row'>
+    <input type='text' placeholder='Enter a startup' ng-model='searchCompany.name'>
+  </form>
+</div>
 
-{{searchCompany.name}}
+<div class='row'>
+  <p>{{searchCompany.name}}</p>
+</div>
 <%# binding.pry %>
