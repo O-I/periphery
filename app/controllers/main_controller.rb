@@ -1,16 +1,15 @@
 class MainController < ApplicationController
 
   def show
-    # @companies = Company.all
-    # @company = Crunchbase::Company.get('pixtr')
-    # respond_with Crunchbase::Company.get(params[:id])
-    # @company = Crunchbase::Company.get(params[:id])
   end
 
   def search
     @company = Crunchbase::Company.find(params[:search])
+    @founders = @company.relationships.map do |founder|
+      Crunchbase::Person.get(founder.person_permalink)
+    end
     binding.pry
-      # @company = Company.search(params[:search]
+    # @company = Company.search(params[:search]
   end
 
 end
