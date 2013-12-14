@@ -5,11 +5,11 @@ class MainController < ApplicationController
 
   def search
     @company = Crunchbase::Company.find(params[:search])
-    @founders = @company.relationships.map do |founder|
-      Crunchbase::Person.get(founder.person_permalink)
+    @peeps = @company.relationships.map do |peep|
+      Crunchbase::Person.get(peep.person_permalink)
     end
     binding.pry
-    # @company = Company.search(params[:search]
+    # @company = Company.search(params[:search])
   end
 
 end
