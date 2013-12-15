@@ -11,7 +11,7 @@ class MainController < ApplicationController
         Crunchbase::Person.get(peep.person_permalink)
       end
       respond_to do |format|
-        format.html { redirect_to root_path }
+        # format.html { redirect_to root_path }
         format.js
       end
       # binding.pry
