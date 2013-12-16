@@ -1,5 +1,12 @@
 $(function () {
-  $('.search.button').click(function () {
-    $('div.search_results').append('<%= @company %>');
-  });  
+  $('form').submit(function (e) {
+    // $('div.search_results').empty();
+    // $('div.search_results').append("<%= @company.overview %>");
+    // e.preventDefault();
+    // $('.results').append('<%= @company.name %>');
+    debugger;
+    <%= puts "I'm here!" %>
+    $('body').append('<%= @company.name %>');
+    <%= puts "Here, too!" %>
+  });
 });
