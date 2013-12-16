@@ -16,7 +16,7 @@
 
     <div class='row'>
       <%= form_tag(search_path, method: "get", remote: false) do %>
-        <%= text_field_tag 'search', nil, placeholder: "Enter the name of a startup here" %>
+        <%= text_field_tag 'search', nil, placeholder: "Search a startup, see who's involved" %>
         <%= submit_tag "Search", name: nil, class: "search button" %>
       <% end %>
     </div>

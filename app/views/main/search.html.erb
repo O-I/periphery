@@ -1,9 +1,9 @@
-<div class='row'><p><%= @company.name %></p></div>
-<div class='row'><%= (@company.overview.match(/(<p>.*?\.)\W/)[-1] + '</p>').html_safe %></div>
+<div class='row'><h3><%= @company.name %></h3></div>
+<div class='row panel'><%= ('<h5>' + @company.overview.match(/<p>(.*?\.)\W/)[-1] + '</h5>').html_safe %></div>
 <ul class='large-block-grid-4'>
   <% @peeps.each do |peep| %>
     <li class='th'>
-      <p><%= "#{peep.first_name} #{peep.last_name}" %></p>
+      <h5><%= "#{peep.first_name} #{peep.last_name}" %></h5>
       <img src=<%= "http://www.crunchbase.com/#{peep.image.sizes[1].url unless peep.image.blank?}" %>>
     </li>
   <% end %>
