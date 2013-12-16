@@ -11,10 +11,20 @@
 //   // margin-top: 0;
 // }
 
+body {
+  margin: 0 auto;
+}
+
 li.th {
   height: 352px;
+  width: 252px;
+  margin: 1px;
   text-align: center;
   overflow: scroll;
+}
+
+input {
+  text-align: center;
 }
 
 img {
