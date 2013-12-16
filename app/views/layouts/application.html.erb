@@ -12,6 +12,14 @@
   </head>
 
   <body>
+    <h1 class='text-center'>Periphery</h1>
+
+    <div class='row'>
+      <%= form_tag(search_path, method: "get", remote: false) do %>
+        <%= text_field_tag 'search', nil, placeholder: "Enter the name of a startup here" %>
+        <%= submit_tag "Search", name: nil, class: "search button" %>
+      <% end %>
+    </div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

@@ -8,12 +8,13 @@ class MainController < ApplicationController
       # @company = Company.search(params[:search])
       @company = Crunchbase::Company.get(params[:search].split.join('-'))
       # @peeps = @company.relationships.map do |peep|
-        # Crunchbase::Person.get(peep.person_permalink)
+      #   Crunchbase::Person.get(peep.person_permalink)
       # end
-      respond_to do |format|
-        # format.html { redirect_to root_path }
-        format.js
-      end
+      # respond_to do |format|
+      #   format.html { redirect_to root_path }
+      #   format.js
+      #   format.json { render @company }
+      # end
       # binding.pry
     else
       redirect_to root_path

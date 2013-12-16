@@ -1,12 +1,9 @@
 $(function () {
   $('form').submit(function (e) {
-    // $('div.search_results').empty();
-    // $('div.search_results').append("<%= @company.overview %>");
-    // e.preventDefault();
-    // $('.results').append('<%= @company.name %>');
+   
     debugger;
     <%= puts "I'm here!" %>
-    $('body').append('<%= @company.name %>');
+    $('.results').empty().append("<%= j render results %>");
     <%= puts "Here, too!" %>
   });
 });
