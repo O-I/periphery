@@ -1,8 +1,10 @@
 <div class='row'><p><%= @company.name %></p></div>
 <div class='row'><%= (@company.overview.match(/(<p>.*?\.)\W/)[-1] + '</p>').html_safe %></div>
-<% @peeps.each do |peep| %>
-  <div class='gridlet row'>
-    <p><%= "#{peep.first_name} #{peep.last_name}" %></p>
-    <img src=<%= "http://www.crunchbase.com/#{peep.image.sizes[1].url unless peep.image.blank?}" %>> <!-- need to find image url -->
-  </div>
-<% end %> 
+<ul class='large-block-grid-4'>
+  <% @peeps.each do |peep| %>
+    <li class='th'>
+      <p><%= "#{peep.first_name} #{peep.last_name}" %></p>
+      <img src=<%= "http://www.crunchbase.com/#{peep.image.sizes[1].url unless peep.image.blank?}" %>>
+    </li>
+  <% end %>
+</ul>
