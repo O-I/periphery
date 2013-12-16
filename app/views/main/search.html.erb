@@ -1,1 +1,8 @@
-<%= @company.name %>
+<div class='row'><p><%= @company.name %></p></div>
+<div class='row'><%= @company.overview.html_safe %></div>
+<% @peeps.each do |peep| %>
+  <div class='row'>
+    <%= "#{peep.first_name} #{peep.last_name}" %>
+    <%= peep.image %> <!-- need to find image url -->
+  </div>
+<% end %> 
