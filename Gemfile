@@ -33,6 +33,8 @@ gem 'dotenv-rails'
 gem 'crunchbase'
 gem 'angellist_api'
 
+gem 'rails_12factor'
+
 group :development do
   gem 'pry-rails'
 end 
