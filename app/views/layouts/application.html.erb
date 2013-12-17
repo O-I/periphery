@@ -17,7 +17,7 @@
     <div class='row'>
       <%= form_tag(search_path, method: "get", remote: false) do %>
         <%= text_field_tag 'search', nil, placeholder: "Search a startup, see who's involved" %>
-        <div class='large-2 large-offset-5 columns'><%= submit_tag "Search", name: nil, class: "search button" %></div>
+        <div class='large-offset-5 columns'><%= submit_tag "Search", name: nil, class: "search button" %></div>
       <% end %>
     </div>
 
