@@ -32,7 +32,8 @@ namespace :crunch do
       rescue Exception => e
         puts "Something went amiss"
         puts "The exception is #{e}"
-        puts company.name
+        puts co.name
+        next
       end
     end
   end
