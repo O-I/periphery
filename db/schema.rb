@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20131217125251) do
 
   create_table "companies", force: true do |t|
     t.text    "name"
+    t.text    "permalink"
     t.text    "description"
     t.text    "overview"
     t.text    "one_line_pitch"

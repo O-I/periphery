@@ -2,6 +2,7 @@ class CreateCompanies < ActiveRecord::Migration
   def change
     create_table :companies do |t|
       t.text :name
+      t.text :permalink
       t.text :description
       t.text :overview
       t.text :one_line_pitch
