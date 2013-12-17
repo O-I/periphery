@@ -1,9 +1,9 @@
 require 'crunchbase'
 
 namespace :crunch do
-  desc "Get all data for 100 randomly selected companies listed by Crunchbase"
+  desc "Get all data for 50 randomly selected companies listed by Crunchbase"
   task all_cos: :environment do
-    all_companies_list = Crunchbase::Company.all.sample(5000)
+    all_companies_list = Crunchbase::Company.all.sample(50)
     all_companies_list.each do |company|
       begin
         puts company.name

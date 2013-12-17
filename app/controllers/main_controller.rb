@@ -6,7 +6,11 @@ class MainController < ApplicationController
   def search
     unless params[:search].blank?
       # @company = Company.search(params[:search])
-      @company = Crunchbase::Company.get(params[:search].split.join('-'))
+      search_term = params[:search].split.join('-').gsub('.', '-')
+      @company = Company.where(permalink: search_term)
+      Crunchbase::Company.get(search_term) if @company.empty?
+      # search_term = params[:search].split.join('-').gsub('.', '-')
+      # @company = Company.where(permalink: search_term)
       @peeps = @company.relationships.map do |peep|
         Crunchbase::Person.get(peep.person_permalink)
       end
