@@ -4,7 +4,8 @@ class Company < ActiveRecord::Base
   serialize :tags
   # serialize :relationships
 
-  has_many :persons
+  has_many :affiliations
+  has_many :people, through: :affiliations
 
   def self.search(company)
     # binding.pry
