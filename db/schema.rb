@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217125251) do
+ActiveRecord::Schema.define(version: 20131217233730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "affiliations", force: true do |t|
+    t.integer "person_id"
+    t.integer "company_id"
+  end
+
+  add_index "affiliations", ["company_id"], name: "index_affiliations_on_company_id", using: :btree
+  add_index "affiliations", ["person_id"], name: "index_affiliations_on_person_id", using: :btree
 
   create_table "companies", force: true do |t|
     t.text    "name"
@@ -34,12 +42,41 @@ ActiveRecord::Schema.define(version: 20131217125251) do
     t.text    "total_money_raised"
     t.text    "acquired_price"
     t.text    "acquirer"
+    t.text    "relationships"
     t.boolean "acquired?",           default: false
     t.boolean "died?",               default: false
     t.integer "number_of_employees"
     t.integer "founded_year"
     t.integer "acquired_year"
     t.integer "death_year"
+  end
+
+  create_table "connections", force: true do |t|
+    t.integer "person_id"
+    t.integer "associate_id"
+  end
+
+  add_index "connections", ["associate_id"], name: "index_connections_on_associate_id", using: :btree
+  add_index "connections", ["person_id"], name: "index_connections_on_person_id", using: :btree
+
+  create_table "people", force: true do |t|
+    t.text    "first_name"
+    t.text    "last_name"
+    t.text    "permalink"
+    t.text    "homepage_url"
+    t.text    "birthplace"
+    t.text    "twitter_username"
+    t.text    "linkedin_url"
+    t.text    "blog_url"
+    t.text    "github_url"
+    t.text    "angellist_url"
+    t.text    "image"
+    t.text    "tags"
+    t.text    "investments"
+    t.text    "relationships"
+    t.integer "born_day"
+    t.integer "born_month"
+    t.integer "born_year"
   end
 
 end
