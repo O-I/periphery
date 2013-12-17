@@ -4,6 +4,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.text :name
       t.text :description
       t.text :overview
+      t.text :one_line_pitch
       t.text :category
       t.text :logo_url
       t.text :homepage_url
@@ -13,9 +14,15 @@ class CreateCompanies < ActiveRecord::Migration
       t.text :offices
       t.text :tags, default: []
       t.text :twitter_username
+      t.text :total_money_raised
+      t.text :acquired_price
+      t.text :acquirer
       t.boolean :acquired?, default: false
+      t.boolean :died?, default: false
       t.integer :number_of_employees
       t.integer :founded_year
+      t.integer :acquired_year
+      t.integer :death_year
     end
   end
 end
