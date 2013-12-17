@@ -18,6 +18,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.text :total_money_raised
       t.text :acquired_price
       t.text :acquirer
+      t.text :relationships
       t.boolean :acquired?, default: false
       t.boolean :died?, default: false
       t.integer :number_of_employees

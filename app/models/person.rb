@@ -1,4 +1,9 @@
 class Person < ActiveRecord::Base
+  serialize :image
+  serialize :tags
+  serialize :investments
+  serialize :relationships
+
   has_many :connections
   has_many :associates, through: :connections
 
