@@ -7,6 +7,9 @@ class Company < ActiveRecord::Base
   has_many :affiliations
   has_many :people, through: :affiliations, uniq: true
 
+  validates_presence_of :name
+  validates_uniqueness_of :name
+
   def self.search(company)
     # binding.pry
     Crunchbase::Company.get(company)

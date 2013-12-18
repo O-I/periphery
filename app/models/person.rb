@@ -17,4 +17,7 @@ class Person < ActiveRecord::Base
   
   has_many :affiliations
   has_many :companies, through: :affiliations, uniq: true
+
+  validates_presence_of :first_name, :last_name
+  validates_uniqueness_of :last_name, scope: :first_name
 end
