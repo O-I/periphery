@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20131217233730) do
   add_index "affiliations", ["company_id"], name: "index_affiliations_on_company_id", using: :btree
   add_index "affiliations", ["person_id"], name: "index_affiliations_on_person_id", using: :btree
 
+  create_table "associations", force: true do |t|
+    t.integer "person_id"
+    t.integer "associate_id"
+  end
+
+  add_index "associations", ["associate_id"], name: "index_associations_on_associate_id", using: :btree
+  add_index "associations", ["person_id"], name: "index_associations_on_person_id", using: :btree
+
   create_table "companies", force: true do |t|
     t.text    "name"
     t.text    "permalink"
@@ -50,14 +58,6 @@ ActiveRecord::Schema.define(version: 20131217233730) do
     t.integer "acquired_year"
     t.integer "death_year"
   end
-
-  create_table "connections", force: true do |t|
-    t.integer "person_id"
-    t.integer "associate_id"
-  end
-
-  add_index "connections", ["associate_id"], name: "index_connections_on_associate_id", using: :btree
-  add_index "connections", ["person_id"], name: "index_connections_on_person_id", using: :btree
 
   create_table "people", force: true do |t|
     t.text    "first_name"
