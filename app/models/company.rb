@@ -5,7 +5,7 @@ class Company < ActiveRecord::Base
   serialize :relationships
 
   has_many :affiliations
-  has_many :people, through: :affiliations
+  has_many :people, through: :affiliations, uniq: true
 
   def self.search(company)
     # binding.pry
