@@ -45,7 +45,7 @@ namespace :crunch do
   desc "Get people for companies in database if needed"
   task co_peeps: :environment do
     Company.all.flat_map(&:relationships) do |peeps|
-      peep.each do |peep|
+      peeps.each do |peep|
         unless Person.where(permalink: peep.permalink).exists?
           Crunchbase::Person.get(peep.permalink)
           Person.create(first_name: peep.first_name,
