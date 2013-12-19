@@ -9,7 +9,7 @@ class Company < ActiveRecord::Base
 
   validates_presence_of :name
   validates_uniqueness_of :name
-  validates_uniqueness_of :company_id, scope: :person_id
+  # validates_uniqueness_of :company_id, scope: :person_id
 
   def self.search(company)
     # binding.pry

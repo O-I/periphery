@@ -20,6 +20,6 @@ class Person < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :last_name, scope: :first_name
-  validates_uniqueness_of :person_id, scope: :associate_id
-  validates_uniqueness_of :company_id, scope: :person_id
+  # validates_uniqueness_of :person_id, scope: :associate_id
+  # validates_uniqueness_of :company_id, scope: :person_id
 end
