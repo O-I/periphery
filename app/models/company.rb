@@ -4,12 +4,11 @@ class Company < ActiveRecord::Base
   serialize :tags
   serialize :relationships
 
-  has_many :affiliations
-  has_many :people, through: :affiliations #, uniq: true
+  has_many :affiliations, dependent: :destroy
+  has_many :people, through: :affiliations
 
   validates_presence_of :name
   validates_uniqueness_of :name
-  # validates_uniqueness_of :company_id, scope: :person_id
 
   def self.search(company)
     # binding.pry

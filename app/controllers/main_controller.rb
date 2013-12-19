@@ -9,10 +9,8 @@ class MainController < ApplicationController
       search_term = params[:search].split.join('-').gsub('.', '-')
       @company = Company.where(permalink: search_term)
       Crunchbase::Company.get(search_term) if @company.empty?
-      # search_term = params[:search].split.join('-').gsub('.', '-')
-      # @company = Company.where(permalink: search_term)
-      @peeps = @company.relationships.map do |peep|
-        Crunchbase::Person.get(peep.person_permalink)
+      @people = @company.relationships.map do |person|
+        Crunchbase::Person.get(person.person_permalink)
       end
       # @pois = @peeps.map do |peep|
       #   poi_name = peep.person_permalink.sub('-', ' ')
