@@ -51,7 +51,7 @@ namespace :crunch do
           Person.create(first_name: peep.first_name,
                         last_name: peep.last_name,
                         permalink: peep.permalink,
-                        homepage_url: peep. homepage_url.
+                        homepage_url: peep. homepage_url,
                         birthplace: peep.birthplace,
                         twitter_username: peep.twitter_username,
                         blog_url: peep.blog_url,
