@@ -7,10 +7,14 @@ class MainController < ApplicationController
     unless params[:search].blank?
       begin
         search_term = params[:search].split.join('-').gsub('.', '-')
-        @company = Crunchbase::Company.get(search_term)
+        @company = Company.where(permalink: search_term).first
         @people = @company.relationships.map do |person|
-          Crunchbase::Person.get(person.person_permalink)
+          Person.where(permalink: person.person_permalink).first
         end
+        # @company = Crunchbase::Company.get(search_term)
+        # @people = @company.relationships.map do |person|
+        #   Crunchbase::Person.get(person.person_permalink)
+        # end
       rescue
         redirect_to root_path, alert: "Sorry, we couldn't find anything on `#{params[:search]}`"
       end
