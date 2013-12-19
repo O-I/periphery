@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217233730) do
+ActiveRecord::Schema.define(version: 20131219192011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,22 +35,22 @@ ActiveRecord::Schema.define(version: 20131217233730) do
   create_table "companies", force: true do |t|
     t.text    "name"
     t.text    "permalink"
-    t.text    "description"
-    t.text    "overview"
-    t.text    "one_line_pitch"
-    t.text    "category"
-    t.text    "logo_url"
-    t.text    "homepage_url"
-    t.text    "blog_url"
-    t.text    "email_address"
-    t.text    "phone_number"
-    t.text    "offices"
+    t.text    "description",         default: ""
+    t.text    "overview",            default: ""
+    t.text    "one_line_pitch",      default: ""
+    t.text    "category",            default: ""
+    t.text    "logo_url",            default: "--- []\n"
+    t.text    "homepage_url",        default: ""
+    t.text    "blog_url",            default: ""
+    t.text    "email_address",       default: ""
+    t.text    "phone_number",        default: ""
+    t.text    "offices",             default: "--- []\n"
     t.text    "tags",                default: "--- []\n"
-    t.text    "twitter_username"
+    t.text    "twitter_username",    default: ""
     t.text    "total_money_raised"
     t.text    "acquired_price"
     t.text    "acquirer"
-    t.text    "relationships"
+    t.text    "relationships",       default: "--- []\n"
     t.boolean "acquired?",           default: false
     t.boolean "died?",               default: false
     t.integer "number_of_employees"
