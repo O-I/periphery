@@ -2,10 +2,10 @@
 <div class='row panel'><%= ('<h5>' + @company.overview.match(/<p>(.*?\.)\W/)[-1] + '</h5>').html_safe %></div>
 <div class='row'>
 <ul class='large-block-grid-4'>
-  <% @peeps.each do |peep| %>
+  <% @people.each do |person| %>
     <li class='th'>
-      <h5><%= "#{peep.first_name} #{peep.last_name}" %></h5>
-      <img src=<%= "http://www.crunchbase.com/#{peep.image.sizes[1].url unless peep.image.blank?}" %>>
+      <h5><%= "#{person.first_name} #{person.last_name}" %></h5>
+      <img src=<%= "http://www.crunchbase.com/#{person.image.sizes[1].url unless person.image.blank?}" %>>
     </li>
   <% end %>
 </ul>
