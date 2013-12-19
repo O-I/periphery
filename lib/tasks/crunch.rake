@@ -44,26 +44,24 @@ namespace :crunch do
 
   desc "Get people for companies in database if needed"
   task co_peeps: :environment do
-    Company.all.flat_map(&:relationships) do |peeps|
-      peeps.each do |peep|
-        unless Person.where(permalink: peep.permalink).exists?
-          Crunchbase::Person.get(peep.permalink)
-          Person.create(first_name: peep.first_name,
-                        last_name: peep.last_name,
-                        permalink: peep.permalink,
-                        homepage_url: peep. homepage_url,
-                        birthplace: peep.birthplace,
-                        twitter_username: peep.twitter_username,
-                        blog_url: peep.blog_url,
-                        image: peep.image,
-                        tags: peep.tags,
-                        investments: peep.investments,
-                        relationships: peep.relationships,
-                        born_day: peep.born_day,
-                        born_month: peep.born_month,
-                        born_year: peep.born_year)
-          end
-        end
+    Company.all.flat_map(&:relationships).each do |peep|
+      unless Person.where(permalink: peep.permalink).exists?
+        Crunchbase::Person.get(peep.permalink)
+        Person.create(first_name: peep.first_name,
+                      last_name: peep.last_name,
+                      permalink: peep.permalink,
+                      homepage_url: peep. homepage_url,
+                      birthplace: peep.birthplace,
+                      twitter_username: peep.twitter_username,
+                      blog_url: peep.blog_url,
+                      image: peep.image,
+                      tags: peep.tags,
+                      investments: peep.investments,
+                      relationships: peep.relationships,
+                      born_day: peep.born_day,
+                      born_month: peep.born_month,
+                      born_year: peep.born_year)
       end
+    end
   end
 end
