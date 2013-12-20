@@ -1,5 +1,7 @@
 class MainController < ApplicationController
 
+  # TODO; Separate out non-controllery statements into the model
+
   def search
     unless params[:search].blank?
       begin

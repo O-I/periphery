@@ -1,2 +1,8 @@
-<div class='row'><h3><%= @company.name %></h3></div>
+<div class='row'>
+  <% unless @company.homepage_url.blank? %>
+    <a href=<%= @company.homepage_url %>><h3><%= @company.name %></h3></a>
+  <% else %>
+    <h3><%= @company.name %></h3>
+  <% end %>
+</div>
 <div class='row panel'><%= ('<h5>' + @company.overview.match(/<p>(.*?\.)\W/)[-1] + '</h5>').html_safe %></div>

@@ -1,9 +1,22 @@
+<!-- TODO; create methods in model to try and clean up all this nil logic seeping into the view OR create partials for the more complex view logic -->
+<!-- TODO; switch out <a> tags with link_to's -->
+
 <div class='row'>
   <ul class='large-block-grid-4'>
     <% @people.each do |person| %>
       <li class='th'>
-        <a href="<%= person.homepage_url.blank? ? "http://www.crunchbase.com/person/#{person.permalink}" : person.homepage_url %>" target="_blank"><h5><%= "#{person.first_name} #{person.last_name}" %></h5></a>
+        <a href="<%= person.homepage_url.blank? ? "http://www.crunchbase.com/person/#{person.permalink}" : person.homepage_url %>" target="_blank">
+          <h5><%= "#{person.first_name} #{person.last_name}" %></h5>
+        </a>
         <img src=<%= person.image.blank? ? 'assets/Portrait_placeholder.png' : "http://www.crunchbase.com/#{person.image.sizes[1].url}" %>>
+        <div class='title-twitter'>
+          <h6><%= person.relationships.select {|p| p.firm_permalink == @company.permalink}.first.title unless person.relationships.select {|p| p.firm_permalink == @company.permalink}.first.blank? %></h6>
+          <% if person.twitter_username %>
+            <a href=<%= "https://twitter.com/#{person.twitter_username}" %> target="_blank">
+              <h6><%= "@#{person.twitter_username}" unless person.twitter_username.blank? %></h6>
+            </a>
+          <% end %>
+        </div>
       </li>
     <% end %>
   </ul>

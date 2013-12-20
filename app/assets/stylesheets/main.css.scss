@@ -16,11 +16,12 @@ body {
 }
 
 li.th {
-  height: 352px;
+  height: 365px;
   width: 252px;
   margin: 1px;
   text-align: center;
   overflow: scroll;
+  position: relative;
 }
 
 input {
@@ -31,4 +32,16 @@ input {
   color: orange;
   text-align: center;
   font-weight: bold;
+}
+
+.title-twitter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h6 {
+  font-size: 12px;
+  margin: 5px;
 }
