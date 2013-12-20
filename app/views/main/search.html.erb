@@ -1,11 +1,2 @@
 <%= render partial: 'company' %> 
-<div class='row'>
-  <ul class='large-block-grid-4'>
-    <% @people.each do |person| %>
-      <li class='th'>
-        <a href="<%= person.homepage_url.blank? ? "http://www.crunchbase.com/person/#{person.permalink}" : person.homepage_url %>" target="_blank"><h5><%= "#{person.first_name} #{person.last_name}" %></h5></a>
-        <img src=<%= person.image.blank? ? 'assets/Portrait_placeholder.png' : "http://www.crunchbase.com/#{person.image.sizes[1].url}" %>>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<%= render partial: 'people' %>
