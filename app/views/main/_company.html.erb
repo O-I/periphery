@@ -1,0 +1,2 @@
+<div class='row'><h3><%= @company.name %></h3></div>
+<div class='row panel'><%= ('<h5>' + @company.overview.match(/<p>(.*?\.)\W/)[-1] + '</h5>').html_safe %></div>

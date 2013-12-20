@@ -1,5 +1,4 @@
-<div class='row'><h3><%= @company.name %></h3></div>
-<div class='row panel'><%= ('<h5>' + @company.overview.match(/<p>(.*?\.)\W/)[-1] + '</h5>').html_safe %></div>
+<%= render partial: 'company' %> 
 <div class='row'>
   <ul class='large-block-grid-4'>
     <% @people.each do |person| %>
