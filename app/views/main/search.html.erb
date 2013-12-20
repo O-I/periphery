@@ -1,12 +1,12 @@
 <div class='row'><h3><%= @company.name %></h3></div>
 <div class='row panel'><%= ('<h5>' + @company.overview.match(/<p>(.*?\.)\W/)[-1] + '</h5>').html_safe %></div>
 <div class='row'>
-<ul class='large-block-grid-4'>
-  <% @people.each do |person| %>
-    <li class='th'>
-      <h5><%= "#{person.first_name} #{person.last_name}" %></h5>
-      <img src=<%= "http://www.crunchbase.com/#{person.image.sizes[1].url unless person.image.blank?}" %>>
-    </li>
-  <% end %>
-</ul>
+  <ul class='large-block-grid-4'>
+    <% @people.each do |person| %>
+      <li class='th'>
+        <a href="<%= person.homepage_url.blank? ? "http://www.crunchbase.com/person/#{person.permalink}" : person.homepage_url %>" target="_blank"><h5><%= "#{person.first_name} #{person.last_name}" %></h5></a>
+        <img src=<%= person.image.blank? ? 'assets/Portrait_placeholder.png' : "http://www.crunchbase.com/#{person.image.sizes[1].url}" %>>
+      </li>
+    <% end %>
+  </ul>
 </div>

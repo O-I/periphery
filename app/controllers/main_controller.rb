@@ -11,6 +11,8 @@ class MainController < ApplicationController
         @people = @company.relationships.map do |person|
           Person.where(permalink: person.person_permalink).first
         end
+        @people.compact!
+        # binding.pry
         # @company = Crunchbase::Company.get(search_term)
         # @people = @company.relationships.map do |person|
         #   Crunchbase::Person.get(person.person_permalink)

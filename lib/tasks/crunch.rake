@@ -3,12 +3,12 @@ require 'crunchbase'
 namespace :crunch do
   desc "Get all data for 50 randomly selected companies listed on Crunchbase"
   task all_cos: :environment do
-    all_companies_list = Crunchbase::Company.all.sample(50)
+    all_companies_list = Crunchbase::Company.all.sample(500)
     all_companies_list.each do |company|
       begin
         puts company.name
-        co = Crunchbase::Company.get(company.permalink)
         unless Company.where(permalink: company.permalink).exists?
+          co = Crunchbase::Company.get(company.permalink)
           Company.create(name: co.name, 
                          permalink: company.permalink,
                          description: co.description,
@@ -32,7 +32,7 @@ namespace :crunch do
                          number_of_employees: co.number_of_employees,
                          founded_year: co.founded_year,
                          # acquired_year: co.acquisition['acquired_year'],
-                         death_year: co.deadpooled_year)
+                         death_year: co.deadpooled_year) unless co.overview.blank? || co.relationships.blank?
         end
       rescue Exception => e
         puts "Something went amiss"
