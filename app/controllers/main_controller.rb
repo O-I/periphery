@@ -1,8 +1,5 @@
 class MainController < ApplicationController
 
-  def show
-  end
-
   def search
     unless params[:search].blank?
       begin
