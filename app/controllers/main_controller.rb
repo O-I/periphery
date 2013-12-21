@@ -2,6 +2,8 @@ class MainController < ApplicationController
 
   # TODO; Separate out non-controllery statements into the model
   # TODO; Needs major DRYing up and separation of concerns
+  # TODO; Consider using Redis caching instead of a database
+  # TODO; Figure out how to pull down photos from other sources
 
   def search
     unless params[:search].blank?
