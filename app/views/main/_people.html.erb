@@ -4,8 +4,8 @@
 <div class='row'>
   <ul class='large-block-grid-4'>
     <% @people.each do |person| %>
-      <div class='flip'>
-        <li class='th card'>
+      <li class='th flip'>
+        <div class='card'>
           <div class='front face'>
             <a href="<%= person.homepage_url.blank? ? "http://www.crunchbase.com/person/#{person.permalink}" : person.homepage_url %>" target="_blank">
               <h5><%= "#{person.first_name} #{person.last_name}" %></h5>
@@ -23,8 +23,8 @@
           <!--  <div class='back face'>
             <h3>Back</h3>
           </div> -->
-        </li>
-      </div>
+        </div>
+      </li>
 
     <% end %>
   </ul>
