@@ -1,3 +1,3 @@
 Periphery
 ======
-Helps your network help yourself.
+Search a startup, see who's involved
