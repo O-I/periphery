@@ -1,18 +1,18 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// .gridlet {
-//   // display: inline-block;
-//   float: left;
-//   height: 365px;/*352px;*/
-//   width: 365px;/*252px;*/
-//   border: 1px solid #ffdffd;
-//   text-align: center;
-//   // margin-top: 0;
-// }
 
 body {
   margin: 0 auto;
+}
+
+li.th {
+  height: 365px;
+  width: 252px;
+  margin: 1px;
+  text-align: center;
+  // overflow: scroll;
+  position: relative;
 }
 
 .flip {
@@ -20,6 +20,11 @@ body {
   height: 365px;
   width: 252px;
   position: relative;
+}
+
+.card {
+  //overflow: hidden;
+  //border: 1px solid black;
 }
 
 .flip .card.flipped {
@@ -47,24 +52,17 @@ body {
 .flip .card .front {
   position: absolute;
   z-index: 1;
-  // height: 365px;
-  // width: 252px;
   // background: black;
     // color: white;
     cursor: pointer;
 }
 
-li {
-  background: #f3f3f3;
-}
-
-li.th {
-  height: 365px;
-  width: 252px;
-  margin: 1px;
-  text-align: center;
-  // overflow: scroll;
-  position: relative;
+.flip .card .back {
+  -webkit-transform: rotatey(-180deg);
+    // background: blue;
+    // background: white;
+    // color: black;
+    cursor: pointer;
 }
 
 input {
