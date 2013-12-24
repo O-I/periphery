@@ -21,27 +21,26 @@ li.th {
   position: relative;
 }
 
-.card {
-  //overflow: hidden;
-  //border: 1px solid black;
-}
-
 .flip .card.flipped {
   -webkit-transform: rotatey(-180deg);
 }
 
 .flip .card {
-  width: 100%;
-  height: 100%;
+  width: 252px;  //100%; removed by me
+  height: 365px; //100%; removed by me
+  left: -4px; // **
+  top: -4px; // **
   -webkit-transform-style: preserve-3d;
   -webkit-transition: 0.5s;
-}
-
+  position: absolute; // **
+}  // ** put in by me to get the face of card to be exactly
+   //    the same size and position as its parent.
+   //    Still not ideal — don't want parent to show
 .flip .card .face {
   width: 100%;
   height: 100%;
   position: absolute;
-  -webkit-backface-visibility: hidden ;
+  -webkit-backface-visibility: hidden;
   z-index: 2;
   text-align: center;
 }
