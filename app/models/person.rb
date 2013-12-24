@@ -3,6 +3,7 @@ class Person < ActiveRecord::Base
   serialize :tags
   serialize :investments
   serialize :relationships
+  serialize :web_presences
 
   has_many :associations, dependent: :destroy
   has_many :associates, through: :associations
