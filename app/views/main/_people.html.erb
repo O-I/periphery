@@ -18,6 +18,12 @@
                   <h6><%= "@#{person.twitter_username}" unless person.twitter_username.blank? %></h6>
                 </a>
               <% end %>
+              <% linkedin = person.web_presences.select { |h| h['title'] == "LinkedIn" } %>
+              <% unless linkedin.blank? %>
+                <a href=<%= linkedin.first['external_url'] %>>
+                  <h6>LinkedIn</h6>
+                </a>
+              <% end %>
             </div>
           </div>
           <div class='back face'>
