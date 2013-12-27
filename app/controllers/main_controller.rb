@@ -5,6 +5,7 @@ class MainController < ApplicationController
   # TODO; Consider using Redis caching instead of a database
   # TODO; Figure out how to pull down photos from other sources
   # TODO; Clean up the database; view logic is getting out of hand
+  # TODO; Networks to investigate next: Angellist, LinkedIn, Venture Beats Profiles
 
   def search
     unless params[:search].blank?
