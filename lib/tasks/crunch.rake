@@ -45,24 +45,31 @@ namespace :crunch do
   desc "Get people for companies in database if needed"
   task co_peeps: :environment do
     Company.all.flat_map(&:relationships).each do |person|
-      unless Person.where(permalink: person.person_permalink).exists?
-        peep = Crunchbase::Person.get(person.person_permalink)
-        Person.create(first_name: peep.first_name,
-                      last_name: peep.last_name,
-                      permalink: peep.permalink,
-                      overview: peep.overview,
-                      homepage_url: peep. homepage_url,
-                      birthplace: peep.birthplace,
-                      twitter_username: peep.twitter_username,
-                      blog_url: peep.blog_url,
-                      web_presences: peep.web_presences,
-                      image: peep.image,
-                      tags: peep.tags,
-                      investments: peep.investments,
-                      relationships: peep.relationships,
-                      born_day: peep.born_day,
-                      born_month: peep.born_month,
-                      born_year: peep.born_year)
+      begin
+        puts person.person_permalink
+        unless Person.where(permalink: person.person_permalink).exists?
+          peep = Crunchbase::Person.get(person.person_permalink)
+          Person.create(first_name: peep.first_name,
+                        last_name: peep.last_name,
+                        permalink: peep.permalink,
+                        overview: peep.overview,
+                        homepage_url: peep. homepage_url,
+                        birthplace: peep.birthplace,
+                        twitter_username: peep.twitter_username,
+                        blog_url: peep.blog_url,
+                        web_presences: peep.web_presences,
+                        image: peep.image,
+                        tags: peep.tags,
+                        investments: peep.investments,
+                        relationships: peep.relationships,
+                        born_day: peep.born_day,
+                        born_month: peep.born_month,
+                        born_year: peep.born_year)
+        end
+      rescue Exception => e
+        puts "Something went amiss"
+        puts "The exception is #{e}"
+        next
       end
     end
   end
