@@ -37,6 +37,9 @@ gem 'rails_12factor'
 
 gem 'newrelic_rpm'
 
-group :development do
+group :development, :test do
   gem 'pry-rails'
+  gem 'pry-debugger'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end 

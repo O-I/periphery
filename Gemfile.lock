@@ -33,6 +33,11 @@ GEM
     angularjs-rails (1.2.3)
     arel (4.0.1)
     atomic (1.1.14)
+    better_errors (1.0.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -42,7 +47,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    columnize (0.3.6)
     crunchbase (0.4.0)
+    debug_inspector (0.0.2)
+    debugger (1.6.2)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
     dotenv (0.9.0)
     dotenv-rails (0.9.0)
       dotenv (= 0.9.0)
@@ -81,6 +94,9 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-debugger (0.2.2)
+      debugger (~> 1.3)
+      pry (~> 0.9.10)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     rack (1.5.2)
@@ -146,6 +162,8 @@ PLATFORMS
 DEPENDENCIES
   angellist_api
   angularjs-rails
+  better_errors
+  binding_of_caller
   coffee-rails (~> 4.0.0)
   crunchbase
   dotenv-rails
@@ -154,6 +172,7 @@ DEPENDENCIES
   jquery-rails
   newrelic_rpm
   pg
+  pry-debugger
   pry-rails
   rails (= 4.0.0)
   rails_12factor
