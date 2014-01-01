@@ -16,6 +16,11 @@
 //= require angular
 //= require_tree .
 
+/* Links working on card flip thanks to Deryck and mayabelle
+   See this Stack Overflow question I asked for more:
+   http://stackoverflow.com/questions/20862733/css-card-flip-animation-for-webkit-browsers-prevents-links-from-functioning
+ */
+
 $(function(){ $(document).foundation(); });
 
 $('.flip').on('click', function(){
