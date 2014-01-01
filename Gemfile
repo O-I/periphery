@@ -22,11 +22,14 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Use unicorn server and enable start up with `rails server`
 gem 'unicorn'
 gem 'unicorn-rails'
 
+# My go-to CSS framework
 gem 'foundation-rails'
 
+# For the future — only vestigial pieces in place currently
 gem 'angularjs-rails'
 
 gem 'dotenv-rails'

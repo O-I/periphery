@@ -24,3 +24,7 @@ $('.flip').click(function(){
   });
   return false;
 });
+
+$('.flip a').on('click', function(e){
+   e.stopPropagation();
+});
