@@ -28,7 +28,6 @@
             </div>
           </div>
           <div class='back face'>
-            <!-- <h3>Back</h3> -->
             <%= person.overview.gsub('<p>','<h6>').gsub('</p>', '</h6>').html_safe unless person.overview.blank? %>
           </div>
         </div>
