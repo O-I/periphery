@@ -36,3 +36,17 @@ $('a').on('click', function(evt){
   evt.stopPropagation();
   //window.location.href = clickedOn.href;
 });
+
+// $('.back').find('a').attr('target', '_blank');
+
+// The below ensures all external links open in a new window
+// See more here: http://stackoverflow.com/questions/12041935/how-to-automatically-add-target-blank-to-external-links-only
+
+$.expr[':'].external = function(obj){
+    return !obj.href.match(/^mailto\:/)
+           && (obj.hostname != location.hostname)
+           && !obj.href.match(/^javascript\:/)
+           && !obj.href.match(/^$/)
+};
+
+$('a:external').attr('target', '_blank');
