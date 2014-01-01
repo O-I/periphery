@@ -18,13 +18,16 @@
 
 $(function(){ $(document).foundation(); });
 
-$('.flip').click(function(){
+$('.flip').on('click', function(){
   $(this).find('.card').addClass('flipped').mouseleave(function(){
     $(this).removeClass('flipped');
   });
   return false;
 });
 
-$('.flip a').on('click', function(e){
-   e.stopPropagation();
+$('a').on('click', function(evt){
+  // var e = evt || window.event;
+  // var clickedOn = (e.currentTarget) ? e.currentTarget : e.srcElement;
+  evt.stopPropagation();
+  //window.location.href = clickedOn.href;
 });
