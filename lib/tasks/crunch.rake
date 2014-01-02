@@ -79,7 +79,7 @@ namespace :crunch do
     Company.all.flat_map(&:relationships).each do |person|
       begin
         puts person.person_permalink
-        peep = Crunchbase::Person.get(p.permalink)
+        peep = Crunchbase::Person.get(person.person_permalink)
         person.update(overview: peep.overview, 
                       web_presences: peep.web_presences)
       rescue Exception => e
